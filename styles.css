@@ -1,44 +1,67 @@
-/* Загальні стилі для body */
+/* styles.css */
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Lilita One', sans-serif; /* Використовуємо шрифт Lilita One */
-    background-color: #f5f5f7; /* Світло-сірий фон */
-    color: #333;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Вирівнюємо все по центру по горизонталі */
-    justify-content: flex-start; /* Відображаємо все з верху */
-    height: 100vh; /* Повна висота екрана */
+  margin: 0;
+  width: 100%;
+  font-family: 'Lilita One', sans-serif; /* Використовуємо шрифт Lilita One */
+  background-color: #f5f5f7; /* Світло-сірий фон */
+  color: #333;
+  text-align: center;
 }
 
-/* Стилі для заголовка */
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
 h1 {
-    font-size: 3em;
-    margin-top: 0;
-    color: #333;
+  position: relative;
+  text-align: center;
+  padding: 40px 0;
+  font-size: calc(5px + 2vw); /* Розмір шрифту залежно від розміру екрана */
+  white-space: nowrap;
+
+  background: -webkit-linear-gradient(92deg, #95d7e3, #eb76ff);
+  background-size: 600vw 600vw; /* Розширюємо область для анімації */
+  
+  -webkit-background-clip: text; /* Обрізаємо фон по тексту для Webkit-браузерів */
+  background-clip: text; /* Стандартне властивість для сумісності */
+  -webkit-text-fill-color: transparent; /* Робимо сам текст прозорим */
+  
+  animation: textAnimate 5s linear infinite alternate; /* Анімація для рухомих кольорів */
 }
 
-/* Стилі для посилання Discord */
-.discord-link {
-    font-size: 1.5em;
-    font-family: 'Lilita One', sans-serif; /* Використовуємо шрифт Lilita One */
-    color: #7289da; /* Колір для посилання Discord */
-    text-decoration: none; /* Без підкреслення */
-    margin-top: 10px;
-    display: inline-block;
+@keyframes textAnimate {
+  from {
+    filter: hue-rotate(0deg); /* Початковий колір */
+    background-position-x: 0%; /* Початкова позиція градієнта */
+  }
+  to {
+    filter: hue-rotate(360deg); /* Крутимо кольори за допомогою hue-rotate */
+    background-position-x: 600vw; /* Рухаємо градієнт для ефекту */
+  }
 }
 
-/* Псевдоклас для підкреслення посилання при наведенні */
-.discord-link:hover {
-    text-decoration: underline;
+/* Стилі для контейнера */
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
-/* Адаптивне зображення */
-.responsive-img {
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-    margin-top:150px; /* Відступ зверху */
+.container:hover {
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Текст параграфу */
+p {
+  font-size: 18px;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 40px;
 }
