@@ -57,7 +57,19 @@ h1 {
 .container:hover {
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
+/* Стилі для посилання Discord */
+.discord-link {
+    font-size: 1.5em;
+    color: #7289da; /* Колір для посилання Discord */
+    text-decoration: none; /* Без підкреслення */
+    margin-top: 10px;
+    display: inline-block;
+}
 
+/* Псевдоклас для підкреслення посилання при наведенні */
+.discord-link:hover {
+    text-decoration: underline;
+}
 /* Текст параграфу */
 p {
   font-size: 18px;
