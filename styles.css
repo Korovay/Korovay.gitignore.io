@@ -23,6 +23,7 @@ h1 {
 /* Стилі для посилання Discord */
 .discord-link {
     font-size: 1.5em;
+    font-family: 'Lilita One', sans-serif; /* Використовуємо шрифт Lilita One */
     color: #7289da; /* Колір для посилання Discord */
     text-decoration: none; /* Без підкреслення */
     margin-top: 10px;
