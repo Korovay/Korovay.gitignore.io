@@ -37,7 +37,7 @@ h1 {
 /* Адаптивне зображення */
 .responsive-img {
     width: 100%;
-    max-width: 800px;
+    max-width: 300px;
     height: auto;
-    margin-top: 20px; /* Відступ зверху */
+    margin-top:150px; /* Відступ зверху */
 }
