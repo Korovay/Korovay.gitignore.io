@@ -8,7 +8,7 @@ body {
   background-repeat: no-repeat; /* Фон не повторюється */
   color: #333;
   text-align: center;
-  opacity: 50; /* Прозорість фону */
+  opacity: 90; /* Прозорість фону */
 }
 
 .wrapper {
