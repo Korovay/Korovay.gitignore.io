@@ -12,6 +12,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  gap: 20px; /* Між текстом і картинкою буде відстань */
 }
 
 h1 {
@@ -63,4 +64,8 @@ p {
   color: #666;
   line-height: 1.5;
   margin-bottom: 15px;
+}
+
+.gif-img {
+  width: 500px; /* Розмір картинки */
 }
