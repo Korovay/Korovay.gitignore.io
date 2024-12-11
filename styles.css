@@ -21,7 +21,7 @@ h1 {
   padding: 40px 0;
   font-size: calc(5px + 2vw); /* Розмір шрифту залежно від розміру екрана */
   white-space: nowrap;
-
+ margin-top: 10px; /* Відступ зверху */
   background: -webkit-linear-gradient(92deg, #95d7e3, #eb76ff);
   background-size: 600vw 600vw; /* Розширюємо область для анімації */
   
@@ -64,6 +64,6 @@ p {
   color: #666;
   line-height: 1.5;
   margin-bottom: 40px;
-  margin-top: 10px; /* Відступ зверху */
+  
 
 }
