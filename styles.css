@@ -2,9 +2,13 @@ body {
   margin: 0;
   width: 100%;
   font-family: 'Lilita One', sans-serif; /* Використовуємо шрифт Roboto */
-  background-color: #e0f7fa; /* Світлий блакитний фон */
+  background-image: url('https://i.imgur.com/ABbCb3F.jpeg'); /* Встановлюємо зображення фоном */
+  background-size: cover; /* Забезпечує покриття фоном */
+  background-position: center; /* Центруємо фон */
+  background-repeat: no-repeat; /* Фон не повторюється */
   color: #333;
   text-align: center;
+  opacity: 0.8; /* Прозорість фону */
 }
 
 .wrapper {
@@ -13,6 +17,8 @@ body {
   align-items: center;
   height: 100vh;
   gap: 20px; /* Між текстом і картинкою буде відстань */
+  position: relative;
+  z-index: 1; /* Забезпечує, щоб вміст був поверх фону */
 }
 
 h1 {
