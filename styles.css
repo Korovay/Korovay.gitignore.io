@@ -18,6 +18,49 @@ h1 {
     font-size: 3em;
     margin-top: 0;
     color: #333;
+    background: -webkit-linear-gradient(92deg, #95d7e3, #eb76ff);
+    background-size: 600vw 600vw; /* Розширюємо область для анімації */
+    -webkit-background-clip: text; /* Обрізаємо фон по тексту для Webkit-браузерів */
+    background-clip: text; /* Стандартне властивість для сумісності */
+    -webkit-text-fill-color: transparent; /* Робимо сам текст прозорим */
+    animation: textAnimate 5s linear infinite alternate; /* Анімація для рухомих кольорів */
+}
+
+/* Анімація для градієнта тексту */
+@keyframes textAnimate {
+    from {
+        filter: hue-rotate(0deg);
+        background-position-x: 0%;
+    }
+    to {
+        filter: hue-rotate(360deg);
+        background-position-x: 600vw;
+    }
+}
+
+/* Стилі для посилання Discord */
+.discord-link {
+    font-size: 1.5em;
+    color: #7289da; /* Колір для посилання Discord */
+    text-decoration: none; /* Без підкреслення */
+    margin-top: 10px;
+    display: inline-block;
+}
+
+/* Стиль для анімованого тексту в посиланні */
+.animated-text {
+    display: inline-block;
+    background: -webkit-linear-gradient(92deg, #95d7e3, #eb76ff);
+    background-size: 600vw 600vw;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textAnimate 5s linear infinite alternate; /* Анімація для рухомих кольорів */
+}
+
+/* Псевдоклас для підкреслення посилання при наведенні */
+.discord-link:hover {
+    text-decoration: underline;
 }
 
 /* Адаптивне зображення */
