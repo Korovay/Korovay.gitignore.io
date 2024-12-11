@@ -18,10 +18,10 @@ body {
 h1 {
   position: relative;
   text-align: center;
-  padding: 40px 0;
+  padding: 20px 0;
   font-size: calc(5px + 2vw); /* Розмір шрифту залежно від розміру екрана */
   white-space: nowrap;
- margin-top: 10px; /* Відступ зверху */
+
   background: -webkit-linear-gradient(92deg, #95d7e3, #eb76ff);
   background-size: 600vw 600vw; /* Розширюємо область для анімації */
   
