@@ -2,13 +2,13 @@ body {
   margin: 0;
   width: 100%;
   font-family: 'Lilita One', sans-serif; /* Використовуємо шрифт Roboto */
-  background-image: url('https://i.imgur.com/Qiz31jZ.jpeg'); /* Встановлюємо зображення фоном */
+  background-image: url('https://i.imgur.com/ABbCb3F.jpeg'); /* Встановлюємо зображення фоном */
   background-size: cover; /* Забезпечує покриття фоном */
   background-position: center; /* Центруємо фон */
   background-repeat: no-repeat; /* Фон не повторюється */
-  
+  color: #333;
   text-align: center;
-  opacity: 0.1; /* Прозорість фону */
+  opacity: 0.8; /* Прозорість фону */
 }
 
 .wrapper {
@@ -17,8 +17,6 @@ body {
   align-items: center;
   height: 100vh;
   gap: 20px; /* Між текстом і картинкою буде відстань */
-  position: relative;
-  z-index: 1; /* Забезпечує, щоб вміст був поверх фону */
 }
 
 h1 {
@@ -27,14 +25,11 @@ h1 {
   padding: 20px 0;
   font-size: calc(5px + 2vw); /* Розмір шрифту залежно від розміру екрана */
   white-space: nowrap;
-
   background: -webkit-linear-gradient(92deg, #ff5733, #ff66b2); /* Новий градієнт */
   background-size: 600vw 600vw; /* Розширюємо область для анімації */
-  
   -webkit-background-clip: text; /* Обрізаємо фон по тексту для Webkit-браузерів */
   background-clip: text; /* Стандартне властивість для сумісності */
   -webkit-text-fill-color: transparent; /* Робимо сам текст прозорим */
-  
   animation: textAnimate 5s linear infinite alternate; /* Анімація для рухомих кольорів */
 }
 
@@ -49,29 +44,10 @@ h1 {
   }
 }
 
-/* Стилі для контейнера */
-.container {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 30px;
-  background-color: white;
-  border-radius: 12px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-}
-
-.container:hover {
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2); /* Більший ефект тіні */
-}
-
-/* Текст параграфу */
-p {
-  font-size: 18px;
-  color: #666;
-  line-height: 1.5;
-  margin-bottom: 15px;
-}
-
-.gif-img {
-  width: 500px; /* Розмір картинки */
+/* Стилі для Discord віджету */
+.discord-widget {
+  position: fixed;
+  top: 20px; /* Відступ від верхнього краю */
+  right: 20px; /* Відступ від правого краю */
+  z-index: 10; /* Забезпечує, щоб віджет був поверх інших елементів */
 }
