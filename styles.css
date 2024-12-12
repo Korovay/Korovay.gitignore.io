@@ -14,21 +14,20 @@ body {
 
 .wrapper {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh; /* Висота на всю сторінку */
-  gap: 20px;
+  height: 100vh;
   padding: 20px;
+  box-sizing: border-box;
 }
 
-/* Контейнер для основного вмісту */
+/* Контейнер */
 .container {
   max-width: 900px;
-  width: 90%; /* Адаптація ширини */
-  margin: 40px auto;
+  width: 90%;
+  margin: 20px auto;
   padding: 30px;
-  background-color: rgba(255, 255, 255, 0.95); /* Легкий прозорий фон */
+  background-color: rgba(255, 255, 255, 0.95);
   border-radius: 12px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
@@ -36,70 +35,54 @@ body {
 
 .container:hover {
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-  transform: translateY(-5px); /* Легкий підйом при наведенні */
+  transform: translateY(-5px);
 }
 
 /* Заголовок */
 h1 {
-  margin: 0;
+  font-size: calc(18px + 2vw);
+  margin-bottom: 20px;
   text-align: center;
-  padding: 20px 0;
-  font-size: calc(16px + 3vw);
-  white-space: nowrap;
   background: -webkit-linear-gradient(92deg, #ff5733, #ff66b2);
-  background-size: 600vw 600vw;
-  -webkit-background-clip: text;
   background-clip: text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: textAnimate 5s linear infinite alternate;
 }
 
-img.gif-img {
-  max-width: 80%;
-  height: auto;
-  margin-top: 10px;
+/* Віджет Discord */
+.discord-widget {
+  margin-top: 20px;
+  width: 100%;
+  height: 400px;
 }
 
-/* Медійний запит для маленьких екранів */
-@media screen and (max-width: 768px) {
-  .wrapper {
-    flex-direction: column;
-    height: auto;
-    padding: 20px 10px;
-  }
+.discord-widget iframe {
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
 
+/* Адаптація для мобільних пристроїв */
+@media screen and (max-width: 768px) {
   .container {
-    padding: 20px; /* Менший падінг */
-    border-radius: 8px;
-    width: 95%;
+    padding: 20px;
   }
 
   h1 {
-    font-size: calc(18px + 2vw); /* Зменшений шрифт */
-  }
-
-  img.gif-img {
-    width: 100%;
-    max-width: 300px;
+    font-size: calc(16px + 2vw);
   }
 
   .discord-widget {
-    position: relative;
-    margin-top: 20px;
-    width: 100%;
-    max-width: 350px;
-    margin: 0 auto;
+    height: 300px; /* Менша висота на мобільних */
   }
 }
 
-/* Анімація тексту */
+/* Анімація заголовку */
 @keyframes textAnimate {
   from {
     filter: hue-rotate(0deg);
-    background-position-x: 0%;
   }
   to {
     filter: hue-rotate(360deg);
-    background-position-x: 600vw;
   }
 }
