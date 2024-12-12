@@ -1,67 +1,12 @@
 /* Загальні стилі для сторінки */
 body {
   font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
   margin: 0;
   padding: 0;
-  transition: background-color 0.3s, color 0.3s;
 }
 
-/* Світла тема */
-body.light-theme {
-  background-color: #f4f4f4;
-  color: #333;
-}
-
-header.light-theme {
-  background-color: #fff;
-  color: #333;
-}
-
-footer.light-theme {
-  background-color: #f8f9fa;
-  color: #333;
-}
-
-.navbar.light-theme {
-  background-color: #fff;
-}
-
-.navbar-nav .nav-link.light-theme {
-  color: #333;
-}
-
-.navbar-nav .nav-link.light-theme:hover {
-  color: #007bff;
-}
-
-/* Темна тема */
-body.dark-theme {
-  background-color: #121212;
-  color: #fff;
-}
-
-header.dark-theme {
-  background-color: #1c1c1c;
-  color: #fff;
-}
-
-footer.dark-theme {
-  background-color: #333;
-  color: #fff;
-}
-
-.navbar.dark-theme {
-  background-color: #343a40;
-}
-
-.navbar-nav .nav-link.dark-theme {
-  color: #fff;
-}
-
-.navbar-nav .nav-link.dark-theme:hover {
-  color: #00bcd4;
-}
-
+/* Стилі для контейнера */
 .container {
   max-width: 900px;
   width: 100%;
@@ -73,9 +18,31 @@ footer.dark-theme {
   transition: all 0.3s ease;
 }
 
+/* Ефект при наведенні на контейнер */
 .container:hover {
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
   transform: translateY(-5px);
+}
+
+/* Заголовок сторінки */
+h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+header {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: #fff;
+  text-align: center;
+}
+
+header img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 20px;
 }
 
 /* Список команд */
@@ -101,15 +68,17 @@ code {
 footer {
   text-align: center;
   padding: 10px;
+  background-color: #333;
+  color: white;
   font-size: 0.9rem;
   position: fixed;
   width: 100%;
   bottom: 0;
 }
 
-/* Навігаційна панель */
+/* Стилі для навігаційної панелі */
 .navbar {
-  transition: background-color 0.3s;
+  background-color: #343a40;
 }
 
 .navbar .navbar-brand {
