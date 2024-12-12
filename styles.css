@@ -54,7 +54,7 @@ h1 {
 .discord-widget {
   margin-top: 20px;
   width: 100%; /* Віджет займає всю ширину контейнера */
-  height: 400px;
+  height: 500px;
 }
 
 .discord-widget iframe {
