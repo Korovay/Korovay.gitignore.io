@@ -1,3 +1,4 @@
+/* Загальні стилі */
 body {
   margin: 0;
   width: 100%;
@@ -8,23 +9,26 @@ body {
   background-repeat: no-repeat;
   color: #333;
   text-align: center;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 .wrapper {
   display: flex;
-  flex-direction: column; /* Змінюємо на вертикальну структуру для мобільних */
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh; /* Висота на всю сторінку */
   gap: 20px;
+  padding: 20px;
 }
+
 /* Контейнер для основного вмісту */
 .container {
   max-width: 900px;
+  width: 90%; /* Адаптація ширини */
   margin: 40px auto;
   padding: 30px;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.95); /* Легкий прозорий фон */
   border-radius: 12px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
@@ -32,12 +36,15 @@ body {
 
 .container:hover {
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-  }
+  transform: translateY(-5px); /* Легкий підйом при наведенні */
+}
+
+/* Заголовок */
 h1 {
-  position: relative;
+  margin: 0;
   text-align: center;
   padding: 20px 0;
-  font-size: calc(10px + 3vw);
+  font-size: calc(16px + 3vw);
   white-space: nowrap;
   background: -webkit-linear-gradient(92deg, #ff5733, #ff66b2);
   background-size: 600vw 600vw;
@@ -48,33 +55,40 @@ h1 {
 }
 
 img.gif-img {
-  max-width: 80%; /* Обмежуємо розмір GIF для мобільних */
+  max-width: 80%;
   height: auto;
+  margin-top: 10px;
 }
 
 /* Медійний запит для маленьких екранів */
 @media screen and (max-width: 768px) {
   .wrapper {
-    flex-direction: column; /* Вертикальний вигляд */
-    height: auto; /* Висота по контенту */
-    padding: 20px 10px; /* Внутрішній відступ */
+    flex-direction: column;
+    height: auto;
+    padding: 20px 10px;
+  }
+
+  .container {
+    padding: 20px; /* Менший падінг */
+    border-radius: 8px;
+    width: 95%;
   }
 
   h1 {
-    font-size: calc(20px + 2vw); /* Зменшуємо розмір шрифту */
-  }
-
-  .discord-widget {
-    position: relative; /* Віджет буде в кінці сторінки */
-    margin-top: 20px;
-    width: 100%;
-    max-width: 350px; /* Обмежуємо ширину */
-    margin: 0 auto; /* Центруємо по горизонталі */
+    font-size: calc(18px + 2vw); /* Зменшений шрифт */
   }
 
   img.gif-img {
-    width: 100%; /* Ширина зображення на всю ширину */
-    max-width: 300px; /* Обмежуємо максимальний розмір */
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .discord-widget {
+    position: relative;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
   }
 }
 
