@@ -50,7 +50,7 @@ body {
 
 .discord-widget iframe {
   width: 100%;
-  height: 400px; /* Фіксована висота віджета */
+  height: 410px; /* Фіксована висота віджета */
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
