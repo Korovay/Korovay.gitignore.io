@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Статистика Клубу</title>
+    <link rel="icon" href="https://i.imgur.com/g4ENmYv.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Lilita One', sans-serif;
+            background-image: url('https://i.imgur.com/aeqMAti.jpeg');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            text-align: center;
+        }
+
+        .club-container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #FFD700;
+        }
+
+        .club-details {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+        }
+
+        .detail-box {
+            flex: 1 1 250px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        .detail-title {
+            font-size: 1.2rem;
+            color: #FFD700;
+        }
+
+        .detail-value {
+            font-size: 1.5rem;
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="club-container">
+        <h1>Статистика Клубу</h1>
+        <div id="club-info">
+            <p>Завантаження даних...</p>
+        </div>
+        <div class="footer">
+            <p>Дані оновлюються кожні 5 хвилин</p>
+        </div>
+    </div>
+
+    <script>
+        const apiKey = 'ВАШ_API_KEY'; // Змініть на свій ключ API
+        const clubTag = '#2CCCRYJYV';
+        const apiUrl = `https://api.brawlstars.com/v1/clubs/${encodeURIComponent(clubTag)}`;
+
+        async function fetchClubData() {
+            try {
+                const response = await axios.get(apiUrl, {
+                    headers: {
+                        'Authorization': `Bearer ${apiKey}`
+                    }
+                });
+
+                const data = response.data;
+                updateClubUI(data);
+            } catch (error) {
+                console.error('Помилка під час отримання даних:', error);
+                document.getElementById('club-info').innerHTML = `<p>Помилка завантаження даних</p>`;
+            }
+        }
+
+        function updateClubUI(data) {
+            const clubInfo = document.getElementById('club-info');
+
+            clubInfo.innerHTML = `
+                <div class="club-details">
+                    <div class="detail-box">
+                        <div class="detail-title">Назва клубу</div>
+                        <div class="detail-value">${data.name}</div>
+                    </div>
+                    <div class="detail-box">
+                        <div class="detail-title">Трофеї</div>
+                        <div class="detail-value">${data.trophies.toLocaleString()}</div>
+                    </div>
+                    <div class="detail-box">
+                        <div class="detail-title">Учасники</div>
+                        <div class="detail-value">${data.members.length} / 30</div>
+                    </div>
+                    <div class="detail-box">
+                        <div class="detail-title">Вимога трофеїв</div>
+                        <div class="detail-value">${data.requiredTrophies}</div>
+                    </div>
+                    <div class="detail-box">
+                        <div class="detail-title">Тип клубу</div>
+                        <div class="detail-value">${data.type}</div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Запуск функції при завантаженні сторінки
+        fetchClubData();
+
+        // Оновлення кожні 5 хвилин (300000 мс)
+        setInterval(fetchClubData, 300000);
+    </script>
+</body>
+</html>
