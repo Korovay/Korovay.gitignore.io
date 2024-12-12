@@ -1,39 +1,53 @@
-/* Загальні стилі для сторінки */
+/* Основний фон сторінки */
 body {
   font-family: 'Arial', sans-serif;
-  background-color: #f4f4f4;
   margin: 0;
   padding: 0;
+  background-color: #f4f4f4;
 }
 
-/* Стилі для контейнера */
-.container {
-  max-width: 900px;
-  width: 100%;
-  margin: 20px auto;
-  padding: 20px;
-  background-color: rgba(255, 255, 255, 0.95);
-  border-radius: 12px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+/* Стилі для меню-бару */
+.navbar {
+  background-color: #fff; /* Білий фон */
+  border-bottom: 1px solid #e1e1e1; /* Легка лінія для відділення */
+  padding: 20px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Ефект при наведенні на контейнер */
-.container:hover {
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-  transform: translateY(-5px);
-}
-
-/* Заголовок сторінки */
-h1 {
-  font-size: 2.5rem;
+.navbar .navbar-brand {
+  font-size: 1.8rem;
+  font-weight: bold;
   color: #333;
-  margin-bottom: 20px;
 }
 
+.navbar-nav .nav-link {
+  font-size: 1rem;
+  color: #333;
+  padding: 10px 20px;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #00bcd4; /* Бірюзовий колір при наведенні */
+}
+
+/* Стиснення навігаційного меню на малих екранах */
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler-icon {
+  background-color: #333;
+}
+
+.navbar-collapse {
+  justify-content: flex-end; /* Вирівнювання елементів меню праворуч */
+}
+
+/* Заголовок на сторінці */
 header {
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 80px;
+  padding-bottom: 60px;
   background-color: #fff;
   text-align: center;
 }
@@ -43,6 +57,33 @@ header img {
   height: auto;
   border-radius: 10px;
   margin-top: 20px;
+}
+
+/* Адаптивність меню-бару для мобільних пристроїв */
+@media (max-width: 768px) {
+  .navbar-nav {
+    text-align: center;
+  }
+
+  .navbar-nav .nav-item {
+    margin-bottom: 10px;
+  }
+}
+
+/* Стилі для секцій */
+.container {
+  max-width: 900px;
+  width: 100%;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.container:hover {
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
 }
 
 /* Список команд */
@@ -74,39 +115,4 @@ footer {
   position: fixed;
   width: 100%;
   bottom: 0;
-}
-
-/* Стилі для навігаційної панелі */
-.navbar {
-  background-color: #343a40;
-}
-
-.navbar .navbar-brand {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-.navbar-nav .nav-link {
-  font-size: 1.1rem;
-  margin-left: 20px;
-}
-
-.navbar-nav .nav-link:hover {
-  color: #00bcd4 !important;
-}
-
-.navbar-toggler-icon {
-  background-color: #fff;
-}
-
-@media (max-width: 768px) {
-  /* Адаптація контейнера на мобільних пристроях */
-  .container {
-    padding: 15px;
-  }
-
-  /* Оновлені стилі для меню на мобільних пристроях */
-  .navbar-nav .nav-link {
-    font-size: 1rem;
-  }
 }
