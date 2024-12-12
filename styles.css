@@ -53,11 +53,13 @@ h1 {
 /* Віджет Discord */
 .discord-widget {
   margin-top: 20px;
-  width: 100%;
+  width: 100%; /* Віджет займає всю ширину контейнера */
   height: 400px;
 }
 
 .discord-widget iframe {
+  width: 100%; /* Розтягується на всю ширину батьківського контейнера */
+  height: 100%;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
