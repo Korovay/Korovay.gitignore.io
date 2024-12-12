@@ -1,53 +1,78 @@
 body {
   margin: 0;
   width: 100%;
-  font-family: 'Lilita One', sans-serif; /* Використовуємо шрифт Roboto */
-  background-image: url('https://i.imgur.com/aeqMAti.jpeg'); /* Встановлюємо зображення фоном */
-  background-size: cover; /* Забезпечує покриття фоном */
-  background-position: center; /* Центруємо фон */
-  background-repeat: no-repeat; /* Фон не повторюється */
+  font-family: 'Lilita One', sans-serif;
+  background-image: url('https://i.imgur.com/aeqMAti.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: #333;
   text-align: center;
-  opacity: 0.8; /* Прозорість фону */
+  opacity: 0.8;
 }
 
 .wrapper {
   display: flex;
+  flex-direction: column; /* Змінюємо на вертикальну структуру для мобільних */
   justify-content: center;
   align-items: center;
   height: 100vh;
-  gap: 20px; /* Між текстом і картинкою буде відстань */
+  gap: 20px;
 }
 
 h1 {
   position: relative;
   text-align: center;
   padding: 20px 0;
-  font-size: calc(5px + 2vw); /* Розмір шрифту залежно від розміру екрана */
+  font-size: calc(10px + 3vw);
   white-space: nowrap;
-  background: -webkit-linear-gradient(92deg, #ff5733, #ff66b2); /* Новий градієнт */
-  background-size: 600vw 600vw; /* Розширюємо область для анімації */
-  -webkit-background-clip: text; /* Обрізаємо фон по тексту для Webkit-браузерів */
-  background-clip: text; /* Стандартне властивість для сумісності */
-  -webkit-text-fill-color: transparent; /* Робимо сам текст прозорим */
-  animation: textAnimate 5s linear infinite alternate; /* Анімація для рухомих кольорів */
+  background: -webkit-linear-gradient(92deg, #ff5733, #ff66b2);
+  background-size: 600vw 600vw;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textAnimate 5s linear infinite alternate;
 }
 
+img.gif-img {
+  max-width: 80%; /* Обмежуємо розмір GIF для мобільних */
+  height: auto;
+}
+
+/* Медійний запит для маленьких екранів */
+@media screen and (max-width: 768px) {
+  .wrapper {
+    flex-direction: column; /* Вертикальний вигляд */
+    height: auto; /* Висота по контенту */
+    padding: 20px 10px; /* Внутрішній відступ */
+  }
+
+  h1 {
+    font-size: calc(20px + 2vw); /* Зменшуємо розмір шрифту */
+  }
+
+  .discord-widget {
+    position: relative; /* Віджет буде в кінці сторінки */
+    margin-top: 20px;
+    width: 100%;
+    max-width: 350px; /* Обмежуємо ширину */
+    margin: 0 auto; /* Центруємо по горизонталі */
+  }
+
+  img.gif-img {
+    width: 100%; /* Ширина зображення на всю ширину */
+    max-width: 300px; /* Обмежуємо максимальний розмір */
+  }
+}
+
+/* Анімація тексту */
 @keyframes textAnimate {
   from {
-    filter: hue-rotate(0deg); /* Початковий колір */
-    background-position-x: 0%; /* Початкова позиція градієнта */
+    filter: hue-rotate(0deg);
+    background-position-x: 0%;
   }
   to {
-    filter: hue-rotate(360deg); /* Крутимо кольори за допомогою hue-rotate */
-    background-position-x: 600vw; /* Рухаємо градієнт для ефекту */
+    filter: hue-rotate(360deg);
+    background-position-x: 600vw;
   }
-}
-
-/* Стилі для Discord віджету */
-.discord-widget {
-  position: fixed;
-  top: 20px; /* Відступ від верхнього краю */
-  right: 20px; /* Відступ від правого краю */
-  z-index: 10; /* Забезпечує, щоб віджет був поверх інших елементів */
 }
