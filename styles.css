@@ -16,7 +16,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   padding: 20px;
   box-sizing: border-box;
 }
@@ -25,12 +25,15 @@ body {
 .container {
   max-width: 900px;
   width: 90%;
-  margin: 40px auto;
-  padding: 30px;
+  margin: 20px auto;
+  padding: 20px;
   background-color: rgba(255, 255, 255, 0.95);
   border-radius: 12px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
+  display: flex; /* Гнучка структура */
+  justify-content: center;
+  align-items: center;
 }
 
 .container:hover {
@@ -40,12 +43,13 @@ body {
 
 /* Віджет Discord */
 .discord-widget {
-  margin-top: 0;
   width: 100%;
-  height: 400px;
+  max-width: 100%; /* Гарантує, що ширина не вийде за межі контейнера */
 }
 
 .discord-widget iframe {
+  width: 100%;
+  height: 400px; /* Фіксована висота віджета */
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -53,10 +57,10 @@ body {
 /* Адаптація для мобільних пристроїв */
 @media screen and (max-width: 768px) {
   .container {
-    padding: 20px;
+    padding: 10px;
   }
 
-  .discord-widget {
-    height: 300px; /* Менша висота на мобільних */
+  .discord-widget iframe {
+    height: 300px; /* Менша висота для мобільних */
   }
 }
