@@ -24,7 +24,7 @@ body {
 /* Контейнер */
 .container {
   max-width: 900px;
-  width: 100%;
+  width: 90%;
   margin: 20px auto;
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.95);
@@ -44,7 +44,7 @@ body {
 /* Віджет Discord */
 .discord-widget {
   width: 100%;
-  max-width: 90%; /* Гарантує, що ширина не вийде за межі контейнера */
+  max-width: 100%; /* Гарантує, що ширина не вийде за межі контейнера */
 }
 
 .discord-widget iframe {
