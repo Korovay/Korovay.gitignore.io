@@ -43,6 +43,7 @@ body {
 
 /* Віджет Discord */
 .discord-widget {
+  padding: 5px;
   width: 100%;
   max-width: 100%; /* Гарантує, що ширина не вийде за межі контейнера */
 }
