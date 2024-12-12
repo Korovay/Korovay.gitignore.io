@@ -43,8 +43,8 @@ body {
 
 /* Віджет Discord */
 .discord-widget {
-  width: 100%;
-  max-width: 100%; /* Гарантує, що ширина не вийде за межі контейнера */
+  width: 90%;
+  max-width: 900%; /* Гарантує, що ширина не вийде за межі контейнера */
 }
 
 .discord-widget iframe {
