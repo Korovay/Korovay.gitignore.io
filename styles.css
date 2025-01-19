@@ -13,12 +13,13 @@ body {
 }
 
 .wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: flex; /* Встановлює гнучку структуру */
+  justify-content: center; /* Вирівнює по горизонталі */
+  align-items: center; /* Вирівнює по вертикалі */
   min-height: 100vh;
   padding: 20px;
   box-sizing: border-box;
+  gap: 20px; /* Відстань між елементами */
 }
 
 /* Контейнер */
@@ -32,9 +33,6 @@ body {
   border-radius: 12px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
-  display: flex; /* Гнучка структура */
-  justify-content: center;
-  align-items: center;
 }
 
 .container:hover {
@@ -44,9 +42,8 @@ body {
 
 /* Віджет Discord */
 .discord-widget {
+  width: 400px; /* Фіксована ширина віджета */
   padding: 10px;
-  width: 100%;
-  max-width: 100%; /* Гарантує, що ширина не вийде за межі контейнера */
 }
 
 .discord-widget iframe {
@@ -58,8 +55,12 @@ body {
 
 /* Адаптація для мобільних пристроїв */
 @media screen and (max-width: 768px) {
-  .container {
-    padding: 10px;
+  .wrapper {
+    flex-direction: column; /* Вертикальне вирівнювання */
+  }
+
+  .discord-widget {
+    width: 100%; /* Розтягується на всю ширину */
   }
 
   .discord-widget iframe {
