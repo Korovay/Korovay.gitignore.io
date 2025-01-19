@@ -42,7 +42,7 @@ body {
 
 /* Віджет Discord */
 .discord-widget {
-  width: 400px; /* Фіксована ширина віджета */
+  width: 250px; /* Фіксована ширина віджета */
   padding: 10px;
 }
 
