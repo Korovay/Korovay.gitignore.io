@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alliance Members</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <h1>Список учасників альянсу</h1>
+    <button onclick="loadAllianceData()">Завантажити учасників</button>
+    <ul id="memberList">
+        <!-- Сюди буде додано список учасників -->
+    </ul>
+
+    <script>
+        async function getValueFromAlliance() {
+            try {
+                const response = await axios.get('https://api.hpdevfox.ru/alliance/2CCCRYJYV?api_key=J12ERFGDFMF');
+                return response.data;
+            } catch (error) {
+                if (error.response && [521, 523].includes(error.response.status)) {
+                    return [];
+                }
+                console.error('Error fetching data:', error);
+                return [];
+            }
+        }
+
+        async function getAllianceMembers() {
+            const allianceData = await getValueFromAlliance();
+            if (!allianceData || !allianceData.response) return [];
+            return allianceData.response.AllianceMemberEntries || [];
+        }
+
+        async function loadAllianceData() {
+            const members = await getAllianceMembers();
+            const memberListElement = document.getElementById('memberList');
+            
+            // Якщо дані не отримано
+            if (!members.length) {
+                memberListElement.innerHTML = '<li>Не вдалося отримати інформацію про учасників альянсу.</li>';
+                return;
+            }
+            
+            // Формуємо список учасників
+            memberListElement.innerHTML = '';  // Очищаємо старий список
+            members.forEach(member => {
+                const { Name, MegaPig } = member;
+                const wins = MegaPig?.Wins || 0;
+                const ticketsLeft = MegaPig?.TIcketsLeft || 0;
+
+                const listItem = document.createElement('li');
+                listItem.textContent = `${Name}, Wins: ${wins}, TicketsLeft: ${ticketsLeft}`;
+                memberListElement.appendChild(listItem);
+            });
+        }
+    </script>
+</body>
+</html>
